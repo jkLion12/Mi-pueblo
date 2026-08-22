@@ -1,91 +1,97 @@
-"use client"; // Necesario para manejar el estado del menú móvil
+"use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // íconos para el menú hamburguesa
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/" || pathname === "/home";
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0A4174]/80 backdrop-blur-md shadow-lg border-b border-[#4E8EA2]/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-[#7BBDE8] hover:text-[#BDD8E9] transition-colors">
-                Chacapuente
+    <nav className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[rgba(10,22,33,0.72)] backdrop-blur-xl">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <div>
+              <span className="block font-display text-4xl leading-none text-white">
+                Abancay
               </span>
-              <span className="text-sm font-light text-[#BDD8E9] hidden sm:inline">
-                | Mi Pueblo
+              <span className="mt-1 block text-[0.63rem] uppercase tracking-[0.28em] text-white/45">
+                Apurímac · Perú
               </span>
-            </Link>
-          </div>
+            </div>
+          </Link>
 
-          {/* Enlaces de navegación - Desktop */}
-          <div className="hidden md:flex items-center justify-center flex-1">
-            <div className="flex items-baseline space-x-1">
-              <NavLink href="/">Inicio</NavLink>
-              <NavLink href="/historia">Historia</NavLink>
-              <NavLink href="/turismo">Turismo</NavLink>
-              <NavLink href="/galeria">Galería</NavLink>
-              <NavLink href="/contacto">Contacto</NavLink>
+          <div className="hidden flex-1 items-center justify-center md:flex">
+            <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1.5 backdrop-blur">
+              <NavLink href="/" active={isHome}>
+                Inicio
+              </NavLink>
+              <NavLink href="/#destinos">Destinos</NavLink>
+              <NavLink href="/#experiencias">Experiencias</NavLink>
+              <NavLink href="/#gastronomia">Gastronomía</NavLink>
+              <NavLink href="/#galeria">Galería</NavLink>
+              <NavLink href="/#comunidad">Comunidad</NavLink>
             </div>
           </div>
 
-          {/* Botón de contacto - Desktop */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden items-center md:flex">
             <Link
-              href="/contacto"
-              className="px-4 py-2 rounded-full bg-[#7BBDE8] text-[#001D39] font-semibold hover:bg-[#6EA2B3] transition-colors shadow-md hover:shadow-lg"
+              href="/#planifica"
+              className="rounded-full bg-[var(--color-clay)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#b85b2d]"
             >
-              Visítanos
+              Planifica tu viaje
             </Link>
           </div>
 
-          {/* Botón menú hamburguesa - Mobile */}
-          <div className="md:hidden flex items-center">
+          <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-[#BDD8E9] hover:text-[#7BBDE8] transition-colors"
+              className="rounded-full border border-white/12 bg-white/7 p-2.5 text-white transition hover:bg-white/12"
               aria-label="Abrir menú"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
 
-        {/* Menú móvil desplegable */}
         {isOpen && (
-          <div className="md:hidden bg-[#0A4174]/95 backdrop-blur-md border-t border-[#4E8EA2]/30 py-4">
-            <div className="flex flex-col space-y-3 px-2">
-              <MobileNavLink href="/" onClick={toggleMenu}>
-                Inicio
-              </MobileNavLink>
-              <MobileNavLink href="/historia" onClick={toggleMenu}>
-                Historia
-              </MobileNavLink>
-              <MobileNavLink href="/turismo" onClick={toggleMenu}>
-                Turismo
-              </MobileNavLink>
-              <MobileNavLink href="/galeria" onClick={toggleMenu}>
-                Galería
-              </MobileNavLink>
-              <MobileNavLink href="/contacto" onClick={toggleMenu}>
-                Contacto
-              </MobileNavLink>
-              <Link
-                href="/contacto"
-                className="mt-2 px-4 py-2 rounded-full bg-[#7BBDE8] text-[#001D39] font-semibold text-center hover:bg-[#6EA2B3] transition-colors shadow-md"
-                onClick={toggleMenu}
-              >
-                Visítanos
-              </Link>
+          <div className="pb-5 md:hidden">
+            <div className="rounded-[1.6rem] border border-white/10 bg-[rgba(10,22,33,0.92)] p-3 backdrop-blur-xl">
+              <div className="flex flex-col space-y-2">
+                <MobileNavLink href="/" onClick={toggleMenu}>
+                  Inicio
+                </MobileNavLink>
+                <MobileNavLink href="/#destinos" onClick={toggleMenu}>
+                  Destinos
+                </MobileNavLink>
+                <MobileNavLink href="/#experiencias" onClick={toggleMenu}>
+                  Experiencias
+                </MobileNavLink>
+                <MobileNavLink href="/#gastronomia" onClick={toggleMenu}>
+                  Gastronomía
+                </MobileNavLink>
+                <MobileNavLink href="/#galeria" onClick={toggleMenu}>
+                  Galería
+                </MobileNavLink>
+                <MobileNavLink href="/#comunidad" onClick={toggleMenu}>
+                  Comunidad
+                </MobileNavLink>
+                <Link
+                  href="/#planifica"
+                  className="mt-2 rounded-full bg-[var(--color-clay)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#b85b2d]"
+                  onClick={toggleMenu}
+                >
+                  Planifica tu viaje
+                </Link>
+              </div>
             </div>
           </div>
         )}
@@ -94,20 +100,29 @@ export default function Navbar() {
   );
 }
 
-// Componente para enlaces del menú desktop
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({
+  href,
+  children,
+  active = false,
+}: {
+  href: string;
+  children: React.ReactNode;
+  active?: boolean;
+}) {
   return (
     <Link
       href={href}
-      className="relative px-3 py-2 rounded-md text-[#BDD8E9] hover:text-[#7BBDE8] transition-colors duration-200 text-sm font-medium group"
+      className={`rounded-full px-4 py-2.5 text-sm font-medium transition ${
+        active
+          ? "bg-white text-[var(--color-ink)] shadow-sm"
+          : "text-white/72 hover:bg-white/10 hover:text-white"
+      }`}
     >
       {children}
-      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#7BBDE8] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
     </Link>
   );
 }
 
-// Componente para enlaces del menú móvil
 function MobileNavLink({
   href,
   onClick,
@@ -120,7 +135,7 @@ function MobileNavLink({
   return (
     <Link
       href={href}
-      className="block px-3 py-2 rounded-md text-[#BDD8E9] hover:text-[#7BBDE8] hover:bg-[#49769F]/40 transition-colors text-base font-medium"
+      className="block rounded-2xl px-4 py-3 text-base font-medium text-white/78 transition hover:bg-white/10 hover:text-white"
       onClick={onClick}
     >
       {children}

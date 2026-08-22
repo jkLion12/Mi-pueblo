@@ -1,9 +1,5 @@
-import Image from "next/image";
-import { redirect } from "next/navigation";
+import HomePage from "@/components/HomePage";
 
 export default function Home() {
-  return (
-  redirect('/home')
-
-  );
+  return <HomePage />;
 }

@@ -1,0 +1,65 @@
+export default function Footer() {
+  return (
+    <footer className="bg-[var(--color-ink)] px-5 pb-8 pt-14 text-white sm:px-8 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr]">
+        <div>
+          <p className="font-display text-4xl">Abancay</p>
+          <p className="mt-3 text-sm uppercase tracking-[0.22em] text-white/45">
+            Apurímac · Perú
+          </p>
+          <p className="mt-5 max-w-sm text-sm leading-7 text-white/65">
+            Un destino para descubrir montañas, cultura viva y recuerdos que
+            merecen compartirse.
+          </p>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
+            Explora
+          </p>
+          <ul className="mt-4 space-y-3 text-sm text-white/68">
+            <li><a href="#destinos">Destinos</a></li>
+            <li><a href="#experiencias">Experiencias</a></li>
+            <li><a href="#comunidad">Comunidad</a></li>
+            <li><a href="#planifica">Planifica tu viaje</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
+            Información
+          </p>
+          <ul className="mt-4 space-y-3 text-sm text-white/68">
+            <li>Guía de viaje</li>
+            <li>Rutas recomendadas</li>
+            <li>Consejos prácticos</li>
+            <li>Historias de viajeros</li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
+            Recibe inspiración
+          </p>
+          <p className="mt-4 text-sm leading-7 text-white/65">
+            Muy pronto esta sección podrá recibir novedades, rutas y nuevas
+            historias compartidas por visitantes.
+          </p>
+          <div className="mt-5 flex rounded-full border border-white/14 bg-white/5 p-1">
+            <input
+              type="email"
+              placeholder="Tu correo electrónico"
+              className="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-white placeholder:text-white/34 focus:outline-none"
+            />
+            <button className="rounded-full bg-[var(--color-clay)] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#b85b2d]">
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-xs text-white/42">
+        © 2026 Abancay, Apurímac. Todos los derechos reservados.
+      </div>
+    </footer>
+  );
+}
