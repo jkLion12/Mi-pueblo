@@ -102,19 +102,29 @@ const footerValues = [
 
 export default function HomePage() {
   return (
-    <div className="overflow-hidden bg-transparent text-[var(--color-ink)]">
+    <div className="relative overflow-hidden bg-transparent text-[var(--color-ink)]">
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <Image
+          src="/images/abancay/hero-ampay-generated.png"
+          alt="Santuario Nacional de Ampay como fondo principal"
+          fill
+          priority
+          className="object-cover object-center scale-[1.06]"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,26,20,0.38),rgba(6,26,20,0.58)),radial-gradient(circle_at_top,rgba(182,216,123,0.12),transparent_18%),radial-gradient(circle_at_78%_12%,rgba(74,162,138,0.14),transparent_22%)]" />
+      </div>
       <ScrollEffects />
 
       <section className="relative min-h-screen px-5 pb-12 pt-28 sm:px-8 lg:px-10">
         <div className="absolute inset-0">
           <Image
-            src="/images/abancay/hero-abancay.png"
-            alt="Paisaje de Abancay con montañas y valle"
+            src="/images/abancay/hero-ampay-generated.png"
+            alt="Santuario Nacional de Ampay en Abancay, Apurímac"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-center scale-[1.03]"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,22,16,0.28),rgba(4,22,16,0.54)),radial-gradient(circle_at_18%_22%,rgba(170,214,118,0.16),transparent_20%),radial-gradient(circle_at_78%_18%,rgba(86,174,144,0.16),transparent_16%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,22,16,0.18),rgba(4,22,16,0.58)),radial-gradient(circle_at_18%_18%,rgba(255,220,138,0.18),transparent_24%),radial-gradient(circle_at_76%_22%,rgba(74,162,138,0.16),transparent_18%),linear-gradient(90deg,rgba(6,26,20,0.42)_0%,rgba(6,26,20,0.12)_38%,rgba(6,26,20,0.22)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(to_top,rgba(10,35,28,1),transparent)]" />
         </div>
 
@@ -167,14 +177,14 @@ export default function HomePage() {
     <div className="relative overflow-hidden rounded-[2.1rem] border border-[rgba(244,255,247,0.08)] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
       <div className="relative h-[32rem] md:h-[34rem]">
         <Image
-          src="/images/abancay/santuario-ampay.png"
+          src="/images/abancay/hero-ampay-generated.png"
           alt="Santuario Nacional de Ampay"
           fill
           className="object-cover"
         />
 
-        {/* Gradiente inferior */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,35,28,0.02),rgba(10,35,28,0.78))]" />
+        {/* Gradiente inferior suave para no tapar la imagen */}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,35,28,0.01)_0%,rgba(10,35,28,0.08)_42%,rgba(10,35,28,0.48)_100%)]" />
 
         {/* Badges flotantes: pegados a la izquierda */}
         <div className="glass-ios absolute left-4 top-6 z-20 hidden w-36 rounded-[2rem] p-3 md:block lg:top-8">
