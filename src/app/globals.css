@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --color-background: #f7f3ee;
-  --color-paper: #fffaf4;
-  --color-surface: #ffffff;
-  --color-ink: #17324d;
-  --color-muted: #5f6f7f;
-  --color-clay: #c96b3b;
-  --color-gold-soft: #d7a83c;
-  --color-green: #5f7d4e;
-  --color-sand: #f1dfb4;
+  --color-background: #07131d;
+  --color-paper: #0d1d2a;
+  --color-surface: #132836;
+  --color-ink: #f4efe6;
+  --color-muted: #a5b7c4;
+  --color-clay: #d67b49;
+  --color-gold-soft: #ddb35f;
+  --color-green: #698b63;
+  --color-sand: #f5e3bc;
+  --color-panel: #102433;
+  --color-panel-soft: #153042;
+  --color-line: rgba(212, 230, 245, 0.14);
+  --color-line-strong: rgba(245, 227, 188, 0.2);
 }
 
 @theme inline {
@@ -25,8 +29,9 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top, rgba(215, 168, 60, 0.08), transparent 18%),
-    linear-gradient(180deg, #f7f3ee 0%, #fbf7f1 100%);
+    radial-gradient(circle at top, rgba(214, 123, 73, 0.14), transparent 16%),
+    radial-gradient(circle at 20% 10%, rgba(105, 139, 99, 0.12), transparent 22%),
+    linear-gradient(180deg, #07131d 0%, #0a1824 40%, #0f2230 100%);
   color: var(--color-ink);
   font-family: var(--font-sans), sans-serif;
   text-rendering: optimizeLegibility;
@@ -53,31 +58,37 @@ body {
 .section-title {
   font-family: var(--font-display), serif;
   font-size: clamp(2.3rem, 4vw, 3.8rem);
-  line-height: 0.98;
+  line-height: 0.94;
   color: var(--color-ink);
 }
 
 [data-reveal] {
   opacity: 0;
-  transform: translate3d(0, 36px, 0) scale(0.985);
+  filter: blur(10px);
+  clip-path: inset(0 0 14% 0 round 1.6rem);
+  transform: translate3d(0, 28px, 0) scale(0.985);
   transition:
-    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
+    opacity 520ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    filter 520ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    clip-path 520ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter, clip-path;
 }
 
 [data-reveal].is-visible {
   opacity: 1;
+  filter: blur(0);
+  clip-path: inset(0 0 0 0 round 1.6rem);
   transform: translate3d(0, 0, 0) scale(1);
 }
 
 .paper-panel {
   background:
-    linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(246, 239, 231, 0.94)),
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 40%);
+    linear-gradient(180deg, rgba(16, 36, 51, 0.92), rgba(10, 25, 37, 0.94)),
+    radial-gradient(circle at top left, rgba(214, 123, 73, 0.12), transparent 36%);
   box-shadow:
-    0 28px 70px rgba(23, 50, 77, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    0 28px 70px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .glass-panel {
@@ -85,4 +96,52 @@ body {
   box-shadow:
     0 32px 90px rgba(0, 0, 0, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.lux-card {
+  background: linear-gradient(180deg, rgba(18, 41, 58, 0.92), rgba(10, 24, 36, 0.98));
+  border: 1px solid var(--color-line);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.section-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: 2rem;
+  background:
+    linear-gradient(180deg, rgba(13, 29, 42, 0.9), rgba(9, 21, 31, 0.96)),
+    radial-gradient(circle at top right, rgba(214, 123, 73, 0.12), transparent 28%);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.soft-stroke {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.tonal-chip {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+}
+
+.hover-lift {
+  transition:
+    transform 340ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 340ms ease,
+    background-color 340ms ease,
+    box-shadow 340ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-line-strong);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }

@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-ink)] px-5 pb-8 pt-14 text-white sm:px-8 lg:px-10">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr]">
+    <footer className="px-5 pb-8 pt-14 text-white sm:px-8 lg:px-10">
+      <div className="section-shell mx-auto grid max-w-7xl gap-10 rounded-[2.2rem] p-8 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr]">
         <div>
           <p className="font-display text-4xl">Abancay</p>
           <p className="mt-3 text-sm uppercase tracking-[0.22em] text-white/45">
@@ -45,7 +45,7 @@ export default function Footer() {
             Muy pronto esta sección podrá recibir novedades, rutas y nuevas
             historias compartidas por visitantes.
           </p>
-          <div className="mt-5 flex rounded-full border border-white/14 bg-white/5 p-1">
+          <div className="mt-5 flex rounded-full border border-white/14 bg-white/[0.04] p-1">
             <input
               type="email"
               placeholder="Tu correo electrónico"
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-xs text-white/42">
+      <div className="mx-auto mt-6 max-w-7xl pt-2 text-center text-xs text-white/38">
         © 2026 Abancay, Apurímac. Todos los derechos reservados.
       </div>
     </footer>

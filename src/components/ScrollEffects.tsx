@@ -19,19 +19,18 @@ export default function ScrollEffects() {
 
           if (entry.isIntersecting) {
             target.classList.add("is-visible");
-          } else {
-            target.classList.remove("is-visible");
+            observer.unobserve(target);
           }
         });
       },
       {
-        threshold: 0.18,
-        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.16,
+        rootMargin: "0px 0px -10% 0px",
       }
     );
 
     nodes.forEach((node, index) => {
-      node.style.setProperty("--reveal-delay", `${index * 40}ms`);
+      node.style.setProperty("--reveal-delay", `${index * 28}ms`);
       observer.observe(node);
     });
 

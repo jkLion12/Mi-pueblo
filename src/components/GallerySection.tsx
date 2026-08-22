@@ -44,7 +44,7 @@ export default function GallerySection() {
           {destinations.map((destination) => (
             <article
               key={destination.title}
-              className={`group overflow-hidden rounded-[2rem] border border-[rgba(23,50,77,0.08)] bg-white shadow-[0_24px_60px_rgba(23,50,77,0.09)] ${
+              className={`group hover-lift overflow-hidden rounded-[2rem] border border-white/10 bg-[rgba(255,255,255,0.02)] shadow-[0_24px_60px_rgba(0,0,0,0.22)] ${
                 destination.title === "Santuario Nacional de Ampay"
                   ? "lg:col-span-5"
                   : "lg:col-span-7"
@@ -58,7 +58,7 @@ export default function GallerySection() {
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.22),_transparent_36%),linear-gradient(180deg,_transparent,_rgba(7,14,21,0.92))]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.16),_transparent_34%),linear-gradient(180deg,_transparent,_rgba(7,14,21,0.94))]" />
                 <div className="absolute right-5 top-5 rounded-full border border-white/20 bg-white/10 p-2 text-white backdrop-blur">
                   <Heart className="h-4 w-4" />
                 </div>
@@ -82,9 +82,9 @@ export default function GallerySection() {
           ))}
         </div>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <article
-            className="overflow-hidden rounded-[2rem] border border-[rgba(23,50,77,0.08)] bg-white shadow-[0_20px_50px_rgba(23,50,77,0.08)]"
+            className="section-shell overflow-hidden rounded-[2.15rem]"
             data-reveal
           >
             <div className="relative h-72">
@@ -106,30 +106,54 @@ export default function GallerySection() {
                 </p>
               </div>
             </div>
+            <div className="grid gap-3 p-5 sm:grid-cols-3">
+              <MiniStat label="Altura" value="3,100 msnm" />
+              <MiniStat label="Mood" value="Sereno" />
+              <MiniStat label="Ideal para" value="Fotos" />
+            </div>
           </article>
 
           <article
-            className="paper-panel rounded-[2rem] border border-[rgba(23,50,77,0.06)] p-7"
+            className="section-shell relative overflow-hidden rounded-[2.15rem] p-7"
             data-reveal
           >
-            <span className="section-eyebrow">Curaduría visual</span>
+            <div className="absolute -right-16 top-8 h-36 w-36 rounded-full bg-[rgba(214,123,73,0.18)] blur-3xl" />
+            <div className="absolute bottom-0 left-0 h-24 w-40 bg-[linear-gradient(90deg,_rgba(105,139,99,0.22),_transparent)] blur-2xl" />
+            <span className="section-eyebrow">Ruta sugerida</span>
             <h3 className="mt-4 font-display text-4xl leading-none text-[var(--color-ink)]">
-              Postales reales para una portada con más carácter
+              Una primera travesía entre valle, bosque y piedra histórica
             </h3>
             <p className="mt-4 text-[15px] leading-8 text-[var(--color-muted)]">
-              Reforzamos esta primera experiencia con imágenes inspiradas en
-              lugares concretos del circuito turístico de Abancay para acercar
-              la web a la sensación editorial del mockup inicial.
+              Si alguien llega por primera vez, este bloque debe ayudarle a
+              imaginar un recorrido posible y atractivo, no solo ver tarjetas
+              aisladas. Por eso el foco aquí es narrativo y no decorativo.
             </p>
-            <ul className="mt-6 space-y-3 text-sm text-[var(--color-muted)]">
-              <li>Mirador de Taraccasa para vistas panorámicas de la ciudad.</li>
-              <li>Santuario Nacional de Ampay como joya natural principal.</li>
-              <li>Puente Pachachaca por su fuerza patrimonial e histórica.</li>
-              <li>Laguna de Pacucha como escapada paisajística complementaria.</li>
-            </ul>
+            <div className="mt-6 grid gap-3">
+              <HighlightItem title="Mañana" text="Mirador de Taraccasa para leer el valle y ubicar la ciudad." />
+              <HighlightItem title="Mediodía" text="Santuario de Ampay para respirar bosque, altura y agua." />
+              <HighlightItem title="Tarde" text="Puente Pachachaca y Pacucha para cerrar con paisaje y memoria." />
+            </div>
           </article>
         </div>
       </div>
     </section>
+  );
+}
+
+function MiniStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-[1.35rem] border border-white/8 bg-white/[0.04] px-4 py-3">
+      <p className="text-[0.68rem] uppercase tracking-[0.2em] text-white/45">{label}</p>
+      <p className="mt-2 text-sm font-semibold text-white/88">{value}</p>
+    </div>
+  );
+}
+
+function HighlightItem({ title, text }: { title: string; text: string }) {
+  return (
+    <div className="rounded-[1.35rem] border border-white/8 bg-white/[0.04] px-4 py-4">
+      <p className="text-sm font-semibold text-[var(--color-sand)]">{title}</p>
+      <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">{text}</p>
+    </div>
   );
 }

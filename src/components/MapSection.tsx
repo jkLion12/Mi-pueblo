@@ -1,4 +1,5 @@
 import { ArrowRight, BedDouble, Compass, Map, Utensils } from "lucide-react";
+import Image from "next/image";
 
 const planningItems = [
   { title: "Explorar destinos", icon: Compass },
@@ -10,9 +11,11 @@ const planningItems = [
 export default function MapSection() {
   return (
     <section id="planifica" className="px-5 py-10 pb-20 sm:px-8 lg:px-10" data-reveal>
-      <div className="paper-panel mx-auto max-w-7xl overflow-hidden rounded-[2.2rem] border border-[rgba(23,50,77,0.06)]">
-        <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="p-8 lg:p-10">
+      <div className="section-shell mx-auto max-w-7xl overflow-hidden rounded-[2.6rem]">
+        <div className="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="relative p-8 lg:p-10">
+            <div className="absolute left-10 top-10 h-28 w-28 rounded-full bg-[rgba(214,123,73,0.14)] blur-3xl" />
+            <div className="absolute bottom-8 left-8 h-24 w-36 rounded-full bg-[rgba(105,139,99,0.12)] blur-3xl" />
             <span className="section-eyebrow">Planifica tu viaje</span>
             <h2 className="section-title mt-4">Tu próxima aventura comienza aquí</h2>
             <p className="mt-4 max-w-lg text-[15px] leading-8 text-[var(--color-muted)]">
@@ -22,50 +25,54 @@ export default function MapSection() {
             </p>
             <a
               href="#destinos"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--color-ink)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#10273b]"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--color-clay)] px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#e08b5d]"
             >
               Ver guía de viaje
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
-          <div className="border-t border-[rgba(23,50,77,0.08)] bg-white/70 p-6 lg:border-l lg:border-t-0 lg:p-8">
-            <div className="grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
-              <div className="min-h-[280px] rounded-[1.8rem] border border-[rgba(23,50,77,0.08)] bg-[radial-gradient(circle_at_18%_22%,_rgba(95,125,78,0.22),_transparent_22%),radial-gradient(circle_at_85%_28%,_rgba(201,107,59,0.22),_transparent_18%),linear-gradient(180deg,_#f0eadf,_#e5dccf)] p-5">
-                <div className="h-full rounded-[1.45rem] border border-dashed border-[rgba(23,50,77,0.18)] p-5">
-                  <div className="flex h-full flex-col justify-between">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-muted)]">
-                        Vista de planificación
-                      </p>
-                      <p className="mt-3 font-display text-3xl text-[var(--color-ink)]">
-                        Abancay
-                      </p>
-                    </div>
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      <Marker label="Centro" />
-                      <Marker label="Ampay" />
-                      <Marker label="Pacucha" />
-                      <Marker label="Ruta escénica" />
-                    </div>
+          <div className="border-t border-white/8 bg-[linear-gradient(180deg,_rgba(255,255,255,0.04),_rgba(255,255,255,0.02))] p-6 lg:border-l lg:border-t-0 lg:p-8">
+            <div className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
+              <article className="relative min-h-[320px] overflow-hidden rounded-[2rem] border border-white/10">
+                <Image
+                  src="/images/abancay/rutas-abancay.png"
+                  alt="Ruta paisajística inspirada en Abancay"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(7,19,29,0.2),_rgba(7,19,29,0.88))]" />
+                <div className="absolute left-0 top-0 h-28 w-full bg-[radial-gradient(circle_at_top_left,_rgba(214,123,73,0.22),_transparent_38%)]" />
+                <div className="relative flex h-full flex-col justify-between p-6">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">
+                      Vista de planificación
+                    </p>
+                    <p className="mt-3 font-display text-4xl text-white">Abancay</p>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <Marker label="Centro" />
+                    <Marker label="Ampay" />
+                    <Marker label="Pacucha" />
+                    <Marker label="Ruta escénica" />
                   </div>
                 </div>
-              </div>
+              </article>
 
               <div className="space-y-3">
                 {planningItems.map(({ title, icon: Icon }) => (
-                  <div
+                  <button
                     key={title}
-                    className="flex items-center justify-between rounded-[1.4rem] border border-[rgba(23,50,77,0.08)] bg-white px-4 py-4 text-sm font-medium text-[var(--color-ink)]"
+                    className="hover-lift flex w-full items-center justify-between rounded-[1.6rem] border border-white/8 bg-white/[0.04] px-4 py-4 text-left text-sm font-medium text-white/88"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="rounded-2xl bg-[rgba(23,50,77,0.06)] p-2 text-[var(--color-clay)]">
+                      <div className="rounded-2xl border border-white/8 bg-[rgba(255,255,255,0.06)] p-2 text-[var(--color-clay)]">
                         <Icon className="h-4 w-4" />
                       </div>
                       <span>{title}</span>
                     </div>
-                    <ArrowRight className="h-4 w-4 text-[var(--color-muted)]" />
-                  </div>
+                    <ArrowRight className="h-4 w-4 text-white/46" />
+                  </button>
                 ))}
               </div>
             </div>
@@ -78,7 +85,7 @@ export default function MapSection() {
 
 function Marker({ label }: { label: string }) {
   return (
-    <div className="rounded-2xl border border-[rgba(23,50,77,0.08)] bg-white/80 px-3 py-2 text-sm text-[var(--color-ink)] shadow-sm">
+    <div className="tonal-chip rounded-[1.15rem] px-3 py-2 text-sm text-white/86">
       {label}
     </div>
   );

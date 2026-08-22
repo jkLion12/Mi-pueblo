@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(to_top,_rgba(9,21,32,1),_transparent)]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[860px] max-w-7xl flex-col justify-between px-5 pb-12 pt-28 sm:px-8 lg:px-10">
+      <div className="relative mx-auto flex min-h-[760px] max-w-7xl flex-col justify-center px-5 pb-24 pt-28 sm:px-8 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="max-w-3xl" data-reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[var(--color-gold-soft)] backdrop-blur">
@@ -111,21 +111,6 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-          {pillars.map((pillar) => (
-            <article
-              key={pillar.title}
-              className="rounded-[1.6rem] border border-white/8 bg-white/[0.08] p-5 backdrop-blur transition hover:-translate-y-1 hover:bg-white/[0.12]"
-            >
-              <p className="text-sm font-semibold text-[var(--color-sand)]">
-                {pillar.title}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-white/68">
-                {pillar.description}
-              </p>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -154,26 +139,3 @@ function StatCard({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
-
-const pillars = [
-  {
-    title: "Naturaleza",
-    description: "Montañas, miradores, lagunas y escenarios que cambian con la luz.",
-  },
-  {
-    title: "Cultura",
-    description: "Tradiciones que siguen latiendo en sus plazas, comunidades y caminos.",
-  },
-  {
-    title: "Gastronomía",
-    description: "Sabores con raíz andina que convierten cada parada en una experiencia.",
-  },
-  {
-    title: "Festividades",
-    description: "Fe, color y encuentros que revelan la identidad de la región.",
-  },
-  {
-    title: "Rutas",
-    description: "Caminos para descubrir paisajes serenos y aventuras memorables.",
-  },
-];

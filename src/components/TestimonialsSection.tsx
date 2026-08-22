@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
           </div>
           <a
             href="#galeria"
-            className="inline-flex h-fit items-center rounded-full border border-[rgba(23,50,77,0.14)] px-5 py-3 text-sm font-semibold text-[var(--color-ink)] transition hover:border-[var(--color-clay)] hover:text-[var(--color-clay)]"
+            className="inline-flex h-fit items-center rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-[var(--color-ink)] transition hover:border-[var(--color-clay)] hover:text-[var(--color-sand)]"
           >
             Compartir mi experiencia
           </a>
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
             {photoGrid.map((item, index) => (
               <div
                 key={item.label}
-                className={`relative min-h-[190px] overflow-hidden rounded-[1.75rem] border border-[rgba(23,50,77,0.08)] shadow-[0_18px_45px_rgba(23,50,77,0.08)] ${
+                className={`hover-lift relative min-h-[190px] overflow-hidden rounded-[1.75rem] border border-white/10 shadow-[0_18px_45px_rgba(0,0,0,0.18)] ${
                   index === 0 ? "sm:col-span-2" : ""
                 }`}
               >
@@ -97,7 +97,7 @@ export default function TestimonialsSection() {
             {travelerStories.map((traveler) => (
               <article
                 key={traveler.name}
-                className="rounded-[1.75rem] border border-[rgba(23,50,77,0.08)] bg-white p-6 shadow-[0_20px_50px_rgba(23,50,77,0.08)]"
+                className="section-shell p-6"
                 data-reveal
               >
                 <div className="flex items-center gap-4">
