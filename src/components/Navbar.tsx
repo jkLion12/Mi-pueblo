@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <nav className="fixed inset-x-0 top-0 z-50 px-4 pt-5 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="hidden items-center justify-between rounded-[1.8rem] border border-[rgba(240,247,221,0.16)] bg-[linear-gradient(180deg,rgba(30,72,47,0.52),rgba(17,45,33,0.46))] px-6 py-4 shadow-[0_24px_70px_rgba(5,22,15,0.22),inset_0_1px_0_rgba(240,247,221,0.12)] backdrop-blur-2xl md:flex">
+        <div className="nav-glass hidden items-center justify-between rounded-[1.8rem] px-6 py-4 md:flex">
           <Link href="/" className="min-w-[13rem]">
             <span className="block font-display text-4xl leading-none text-white">
               Abancay
@@ -30,7 +30,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <div className="flex items-center gap-2 rounded-full border border-[rgba(240,247,221,0.12)] bg-[rgba(255,255,255,0.03)] p-1 shadow-[inset_0_1px_0_rgba(240,247,221,0.08)]">
+          <div className="flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.045)] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-md">
             {navItems.map(({ href, label }) => (
               <Link
                 key={label}
@@ -67,7 +67,7 @@ export default function Navbar() {
         </div>
 
         <div className="md:hidden">
-          <div className="flex items-center justify-between rounded-[1.5rem] border border-[rgba(240,247,221,0.16)] bg-[linear-gradient(180deg,rgba(30,72,47,0.56),rgba(17,45,33,0.5))] px-4 py-3 shadow-[0_20px_50px_rgba(5,22,15,0.2),inset_0_1px_0_rgba(240,247,221,0.12)] backdrop-blur-2xl">
+          <div className="nav-glass flex items-center justify-between rounded-[1.5rem] px-4 py-3">
             <Link href="/">
               <span className="block font-display text-3xl leading-none text-white">
                 Abancay
@@ -79,7 +79,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen((value) => !value)}
-              className="rounded-full border border-[rgba(240,247,221,0.14)] bg-[rgba(255,255,255,0.04)] p-2.5 text-white"
+              className="rounded-full border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.05)] p-2.5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-md"
               aria-label="Abrir menú"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -87,13 +87,13 @@ export default function Navbar() {
           </div>
 
           {isOpen && (
-            <div className="mt-3 rounded-[1.8rem] border border-[rgba(240,247,221,0.16)] bg-[linear-gradient(180deg,rgba(30,72,47,0.62),rgba(17,45,33,0.58))] p-3 shadow-[0_24px_50px_rgba(5,22,15,0.22)] backdrop-blur-2xl">
+            <div className="nav-glass mt-3 rounded-[1.8rem] p-3">
               <div className="flex flex-col gap-2">
                 {navItems.map(({ href, label }) => (
                   <Link
                     key={label}
                     href={href}
-                    className="rounded-2xl px-4 py-3 text-sm font-medium text-white/82 transition hover:bg-[rgba(210,244,224,0.1)] hover:text-white"
+                    className="rounded-2xl px-4 py-3 text-sm font-medium text-white/82 transition hover:bg-[rgba(255,255,255,0.08)] hover:text-white"
                     onClick={() => setIsOpen(false)}
                   >
                     {label}
@@ -118,7 +118,7 @@ function UtilityButton({
   return (
     <button
       aria-label={ariaLabel}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(240,247,221,0.12)] bg-[rgba(255,255,255,0.03)] text-white/80 shadow-[inset_0_1px_0_rgba(240,247,221,0.08)] transition duration-300 hover:bg-[rgba(210,244,224,0.1)] hover:text-white"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.05)] text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-md transition duration-300 hover:bg-[rgba(255,255,255,0.09)] hover:text-white"
     >
       {children}
     </button>

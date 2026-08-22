@@ -111,16 +111,16 @@ body {
   position: relative;
   border: 1px solid var(--glass-edge-soft);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-    linear-gradient(135deg, rgba(124, 185, 132, 0.12), rgba(96, 168, 150, 0.08)),
-    rgba(13, 42, 34, 0.28);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025)),
+    linear-gradient(135deg, rgba(124, 185, 132, 0.09), rgba(96, 168, 150, 0.05)),
+    rgba(13, 42, 34, 0.18);
   box-shadow:
     0 24px 70px var(--glass-shadow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
     inset 0 -1px 0 rgba(255, 255, 255, 0.04),
-    inset 0 0 0 1px rgba(182, 220, 195, 0.04);
-  backdrop-filter: blur(24px) saturate(150%);
-  -webkit-backdrop-filter: blur(24px) saturate(150%);
+    inset 0 0 0 1px rgba(182, 220, 195, 0.05);
+  backdrop-filter: blur(10px) saturate(135%) contrast(1.04);
+  -webkit-backdrop-filter: blur(10px) saturate(135%) contrast(1.04);
 }
 
 .glass-ios::before {
@@ -130,9 +130,10 @@ body {
   border-radius: inherit;
   pointer-events: none;
   background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 22%);
-  opacity: 0.9;
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.26), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 18%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent 30%, transparent 72%, rgba(255, 255, 255, 0.05));
+  opacity: 0.92;
 }
 
 .glass-ios::after {
@@ -142,10 +143,74 @@ body {
   border-radius: inherit;
   pointer-events: none;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
-    inset 0 -18px 30px rgba(30, 73, 55, 0.16);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 -16px 28px rgba(30, 73, 55, 0.12),
+    inset 14px 0 24px rgba(255, 255, 255, 0.025);
 }
 
+.nav-glass {
+  position: relative;
+  isolation: isolate;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(26px) saturate(180%) brightness(1.08);
+  -webkit-backdrop-filter: blur(26px) saturate(180%) brightness(1.08);
+
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02) 60%),
+    linear-gradient(135deg, rgba(170, 214, 118, 0.05), rgba(85, 163, 145, 0.03)),
+    rgba(20, 24, 22, 0.28);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0.5px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.15),
+    inset 1px 0 0 rgba(255, 255, 255, 0.06),
+    inset -1px 0 0 rgba(255, 255, 255, 0.06);
+
+  /* ⛔ ESTA LÍNEA DUPLICADA ES LA QUE ESTABA GANANDO - ya la quité */
+
+  overflow: hidden;
+}
+
+/* Capa 1: brillo especular superior + viñeta de luz */
+.nav-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 60% at 20% 0%, rgba(255, 255, 255, 0.35), transparent 55%),
+    radial-gradient(80% 40% at 90% 100%, rgba(255, 255, 255, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, transparent 30%);
+  mix-blend-mode: overlay;
+  opacity: 0.9;
+}
+
+/* Capa 2: borde tipo "lente" — más luminoso en las esquinas, como si el vidrio
+   tuviera espesor y curvara la luz al pasar */
+.nav-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.05) 30%,
+    rgba(255, 255, 255, 0.05) 70%,
+    rgba(255, 255, 255, 0.35)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
 .lux-card {
   background:
     linear-gradient(180deg, rgba(23, 65, 54, 0.9), rgba(14, 38, 31, 0.96)),

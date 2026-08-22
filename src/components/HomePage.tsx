@@ -109,7 +109,7 @@ export default function HomePage() {
           alt="Santuario Nacional de Ampay como fondo principal"
           fill
           priority
-          className="object-cover object-center scale-[1.06]"
+          className="object-cover object-[center_top]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,26,20,0.38),rgba(6,26,20,0.58)),radial-gradient(circle_at_top,rgba(182,216,123,0.12),transparent_18%),radial-gradient(circle_at_78%_12%,rgba(74,162,138,0.14),transparent_22%)]" />
       </div>
@@ -172,7 +172,7 @@ export default function HomePage() {
                       src="/images/abancay/hero-ampay-generated.png"
                       alt="Santuario Nacional de Ampay"
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                     />
 
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,35,28,0.01)_0%,rgba(10,35,28,0.06)_42%,rgba(10,35,28,0.42)_100%)]" />
