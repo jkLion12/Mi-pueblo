@@ -117,15 +117,7 @@ export default function HomePage() {
 
       <section className="relative min-h-screen px-5 pb-12 pt-28 sm:px-8 lg:px-10">
         <div className="absolute inset-0">
-          <Image
-            src="/images/abancay/hero-ampay-generated.png"
-            alt="Santuario Nacional de Ampay en Abancay, Apurímac"
-            fill
-            priority
-            className="object-cover object-center scale-[1.03]"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,22,16,0.18),rgba(4,22,16,0.58)),radial-gradient(circle_at_18%_18%,rgba(255,220,138,0.18),transparent_24%),radial-gradient(circle_at_76%_22%,rgba(74,162,138,0.16),transparent_18%),linear-gradient(90deg,rgba(6,26,20,0.42)_0%,rgba(6,26,20,0.12)_38%,rgba(6,26,20,0.22)_100%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(to_top,rgba(10,35,28,1),transparent)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,22,16,0.18),rgba(4,22,16,0.44)),radial-gradient(circle_at_18%_18%,rgba(255,220,138,0.16),transparent_24%),radial-gradient(circle_at_76%_22%,rgba(74,162,138,0.14),transparent_18%),linear-gradient(90deg,rgba(6,26,20,0.36)_0%,rgba(6,26,20,0.08)_38%,rgba(6,26,20,0.18)_100%)]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl">
@@ -169,47 +161,44 @@ export default function HomePage() {
               </div>
             </div>
 
-<div
-  className="relative x-auto w-full max-w-[40rem] lg:mx-0 lg:justify-self-end"
-  data-reveal
->
-  <div className="glass-ios overflow-hidden rounded-[2.6rem] p-4 md:mr-16 lg:mr-24">
-    <div className="relative overflow-hidden rounded-[2.1rem] border border-[rgba(244,255,247,0.08)] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-      <div className="relative h-[32rem] md:h-[34rem]">
-        <Image
-          src="/images/abancay/hero-ampay-generated.png"
-          alt="Santuario Nacional de Ampay"
-          fill
-          className="object-cover"
-        />
+            <div
+              className="relative mx-auto w-full max-w-[40rem] lg:mx-0 lg:justify-self-end"
+              data-reveal
+            >
+              <div className="glass-ios overflow-hidden rounded-[2.6rem] p-4">
+                <div className="relative overflow-hidden rounded-[2.1rem] border border-[rgba(244,255,247,0.08)] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                  <div className="relative h-[32rem] md:h-[34rem]">
+                    <Image
+                      src="/images/abancay/hero-ampay-generated.png"
+                      alt="Santuario Nacional de Ampay"
+                      fill
+                      className="object-cover"
+                    />
 
-        {/* Gradiente inferior suave para no tapar la imagen */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,35,28,0.01)_0%,rgba(10,35,28,0.08)_42%,rgba(10,35,28,0.48)_100%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,35,28,0.01)_0%,rgba(10,35,28,0.06)_42%,rgba(10,35,28,0.42)_100%)]" />
 
-        {/* Badges flotantes: pegados a la izquierda */}
-        <div className="glass-ios absolute left-4 top-6 z-20 hidden w-36 rounded-[2rem] p-3 md:block lg:top-8">
-          <GlassBadge icon={Leaf} label="Naturaleza" />
-          <GlassBadge icon={Camera} label="Cultura viva" />
-          <GlassBadge icon={UtensilsCrossed} label="Sabores" />
-        </div>
+                    <div className="glass-ios absolute left-4 top-6 z-20 hidden w-36 rounded-[2rem] p-3 md:block lg:top-8">
+                      <GlassBadge icon={Leaf} label="Naturaleza" />
+                      <GlassBadge icon={Camera} label="Cultura viva" />
+                      <GlassBadge icon={UtensilsCrossed} label="Sabores" />
+                    </div>
 
-        {/* Texto inferior */}
-        <div className="absolute inset-x-0 bottom-0 p-6">
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--color-gold-soft)]">
-            Escena principal
-          </p>
-          <p className="mt-3 max-w-xs font-display text-3xl leading-tight text-white">
-            Santuario de Ampay
-          </p>
-          <p className="mt-3 max-w-sm text-sm leading-6 text-white/78">
-            Bosque nublado, cumbres y una energía visual que da tono
-            a toda la experiencia.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                    <div className="absolute inset-x-0 bottom-0 p-6">
+                      <p className="text-xs uppercase tracking-[0.28em] text-[var(--color-gold-soft)]">
+                        Escena principal
+                      </p>
+                      <p className="mt-3 max-w-xs font-display text-3xl leading-tight text-white md:max-w-[56%]">
+                        Santuario de Ampay
+                      </p>
+                      <p className="mt-3 max-w-sm text-sm leading-6 text-white/78 md:max-w-[52%]">
+                        Bosque nublado, cumbres y una energia visual que da tono
+                        a toda la experiencia.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div
@@ -258,30 +247,44 @@ export default function HomePage() {
 
       <section id="experiencias" className="px-5 pb-8 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:grid-rows-2">
             {experienceCards.map(({ title, text, image, icon: Icon }, index) => (
               <article
                 key={title}
-                className="glass-ios rounded-[2.3rem] p-4"
+                className={`glass-ios rounded-[2.3rem] p-4 ${
+                  index === 0 ? "lg:row-span-2" : ""
+                }`}
                 data-reveal
                 style={{ ["--reveal-delay" as string]: `${index * 80}ms` }}
               >
-                <div className="relative h-72 overflow-hidden rounded-[1.8rem]">
+                <div
+                  className={`relative overflow-hidden rounded-[1.8rem] ${
+                    index === 0 ? "h-[32rem]" : "h-[15.25rem]"
+                  }`}
+                >
                   <Image
                     src={image}
                     alt={title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition duration-700"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,35,28,0.04),rgba(10,35,28,0.84))]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,35,28,0.02),rgba(10,35,28,0.78))]" />
                   <div className="absolute left-5 top-5 rounded-2xl border border-[rgba(244,255,247,0.08)] bg-[rgba(210,244,224,0.12)] p-3 text-[var(--color-sand)] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <h3 className="font-display text-3xl leading-tight text-white">
+                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                    <h3
+                      className={`font-display leading-tight text-white ${
+                        index === 0 ? "text-4xl" : "text-3xl"
+                      }`}
+                    >
                       {title}
                     </h3>
-                    <p className="mt-3 max-w-sm text-sm leading-6 text-white/78">
+                    <p
+                      className={`mt-3 text-sm leading-6 text-white/78 ${
+                        index === 0 ? "max-w-md" : "max-w-sm"
+                      }`}
+                    >
                       {text}
                     </p>
                   </div>
