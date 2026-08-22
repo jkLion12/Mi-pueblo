@@ -51,7 +51,7 @@ export default function Footer() {
               placeholder="Tu correo electrónico"
               className="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-white placeholder:text-white/34 focus:outline-none"
             />
-            <button className="rounded-full bg-[var(--color-clay)] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#b85b2d]">
+            <button className="rounded-full bg-[linear-gradient(135deg,#86b86a,#5d956b)] px-4 py-3 text-sm font-semibold text-white transition hover:brightness-105">
               Enviar
             </button>
           </div>
