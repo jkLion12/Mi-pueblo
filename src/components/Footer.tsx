@@ -45,7 +45,7 @@ export default function Footer() {
             Muy pronto esta sección podrá recibir novedades, rutas y nuevas
             historias compartidas por visitantes.
           </p>
-          <div className="mt-5 flex rounded-full border border-white/14 bg-white/[0.04] p-1">
+          <div className="mt-5 flex rounded-full border border-[var(--color-line-soft)] bg-[var(--color-glass)] p-1">
             <input
               type="email"
               placeholder="Tu correo electrónico"

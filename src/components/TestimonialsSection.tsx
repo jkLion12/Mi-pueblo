@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
           </div>
           <a
             href="#galeria"
-            className="inline-flex h-fit items-center rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-[var(--color-ink)] transition hover:border-[var(--color-clay)] hover:text-[var(--color-sand)]"
+            className="inline-flex h-fit items-center rounded-full border border-[var(--color-line-soft)] px-5 py-3 text-sm font-semibold text-[var(--color-ink)] transition hover:border-[var(--color-clay)] hover:text-[var(--color-sand)]"
           >
             Compartir mi experiencia
           </a>
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
             {photoGrid.map((item, index) => (
               <div
                 key={item.label}
-                className={`hover-lift relative min-h-[190px] overflow-hidden rounded-[1.75rem] border border-white/10 shadow-[0_18px_45px_rgba(0,0,0,0.18)] ${
+                className={`hover-lift relative min-h-[190px] overflow-hidden rounded-[1.75rem] border border-[var(--color-line-soft)] shadow-[0_18px_45px_rgba(0,0,0,0.18)] ${
                   index === 0 ? "sm:col-span-2" : ""
                 }`}
               >

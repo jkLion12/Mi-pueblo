@@ -51,7 +51,7 @@ export default function FeaturesSection() {
           {features.map(({ title, description, icon: Icon, image }, index) => (
             <article
               key={title}
-              className="group hover-lift relative min-h-[15rem] overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_22px_60px_rgba(12,24,36,0.24)]"
+              className="group hover-lift relative min-h-[15rem] overflow-hidden rounded-[2rem] border border-[var(--color-line-soft)] shadow-[0_22px_60px_rgba(12,24,36,0.24)]"
               data-reveal
               style={{ ["--reveal-delay" as string]: `${index * 90}ms` }}
             >
@@ -62,7 +62,7 @@ export default function FeaturesSection() {
                 className="object-cover transition duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(8,16,26,0.08),_rgba(8,16,26,0.92))]" />
-              <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/10" />
+              <div className="absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-[rgba(245,227,188,0.08)]" />
               <div className="relative flex h-full flex-col justify-between p-5">
                 <div className="tonal-chip inline-flex w-fit rounded-2xl p-3 text-[var(--color-sand)]">
                   <Icon className="h-5 w-5" />

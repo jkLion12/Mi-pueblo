@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="relative mx-auto flex min-h-[760px] max-w-7xl flex-col justify-center px-5 pb-24 pt-28 sm:px-8 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="max-w-3xl" data-reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[var(--color-gold-soft)] backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(120,93,62,0.14)] bg-[rgba(255,248,236,0.04)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[var(--color-gold-soft)] backdrop-blur">
               <Compass className="h-3.5 w-3.5" />
               Apurímac · Perú
             </span>
@@ -45,7 +45,7 @@ export default function Hero() {
               </a>
               <a
                 href="#comunidad"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/6 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/12 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[rgba(120,93,62,0.14)] bg-[rgba(255,248,236,0.04)] px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-[rgba(255,248,236,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-line-strong)]"
               >
                 Vive experiencias auténticas
               </a>
@@ -53,9 +53,8 @@ export default function Hero() {
           </div>
 
           <div className="lg:justify-self-end" data-reveal>
-            <div className="glass-panel relative overflow-hidden rounded-[2.15rem] border border-white/14 p-5 backdrop-blur-2xl">
-              <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-              <div className="rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,_rgba(255,255,255,0.14),_rgba(255,255,255,0.02))] p-6">
+            <div className="glass-panel relative overflow-hidden rounded-[2.15rem] border border-[rgba(120,93,62,0.14)] p-5 backdrop-blur-2xl">
+              <div className="rounded-[1.6rem] border border-[rgba(120,93,62,0.12)] bg-[linear-gradient(180deg,_rgba(255,248,236,0.08),_rgba(255,255,255,0.02))] p-6">
                 <div className="flex items-center justify-between">
                   <span className="text-xs uppercase tracking-[0.24em] text-white/58">
                     Temporada ideal
@@ -69,9 +68,9 @@ export default function Hero() {
                   <StatCard label="Rutas escénicas" value="7" />
                   <StatCard label="Historias de viajeros" value="180+" />
                 </div>
-                <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,_rgba(234,241,244,0.12),_rgba(234,241,244,0.03))] p-5">
+                <div className="mt-8 rounded-[1.5rem] border border-[rgba(120,93,62,0.12)] bg-[linear-gradient(180deg,_rgba(255,248,236,0.05),_rgba(255,255,255,0.02))] p-5">
                   <div className="flex items-start gap-3">
-                    <div className="rounded-2xl bg-white/10 p-3 text-[var(--color-gold-soft)]">
+                    <div className="rounded-2xl bg-[rgba(255,248,236,0.08)] p-3 text-[var(--color-gold-soft)]">
                       <MapPinned className="h-5 w-5" />
                     </div>
                     <div>
@@ -86,7 +85,7 @@ export default function Hero() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-8 overflow-hidden rounded-[1.6rem] border border-white/10">
+                <div className="mt-8 overflow-hidden rounded-[1.6rem] border border-[rgba(120,93,62,0.12)]">
                   <div className="relative h-60">
                     <Image
                       src="/images/abancay/mirador-taraccasa.png"
@@ -124,7 +123,7 @@ function InfoPill({
   label: string;
 }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/8 px-4 py-2 backdrop-blur">
+    <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(120,93,62,0.14)] bg-[rgba(255,248,236,0.04)] px-4 py-2 backdrop-blur">
       <Icon className="h-4 w-4 text-[var(--color-gold-soft)]" />
       {label}
     </span>
@@ -133,7 +132,7 @@ function InfoPill({
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[1.55rem] border border-white/10 bg-[rgba(255,255,255,0.05)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]">
+    <div className="rounded-[1.55rem] border border-[rgba(120,93,62,0.12)] bg-[rgba(255,248,236,0.04)] p-4 shadow-[inset_0_1px_0_rgba(245,227,188,0.04)]">
       <p className="text-xs uppercase tracking-[0.18em] text-white/48">{label}</p>
       <p className="mt-3 font-display text-3xl text-white">{value}</p>
     </div>

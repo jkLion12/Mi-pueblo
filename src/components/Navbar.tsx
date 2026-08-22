@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full border-b border-white/8 bg-[rgba(7,19,29,0.68)] backdrop-blur-2xl">
+    <nav className="fixed left-0 top-0 z-50 w-full border-b border-[rgba(120,93,62,0.12)] bg-[rgba(7,19,29,0.68)] backdrop-blur-2xl">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
@@ -30,7 +30,7 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden flex-1 items-center justify-center md:flex">
-            <div className="flex items-center gap-1 rounded-full border border-white/8 bg-white/[0.03] p-1.5 backdrop-blur-xl">
+            <div className="flex items-center gap-1 rounded-full border border-[rgba(120,93,62,0.16)] bg-[rgba(255,248,236,0.04)] p-1.5 backdrop-blur-xl">
               <NavLink href="/" active={isHome}>
                 Inicio
               </NavLink>
@@ -55,7 +55,7 @@ export default function Navbar() {
           <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
-              className="rounded-full border border-white/10 bg-white/[0.05] p-2.5 text-white transition hover:bg-white/[0.12]"
+              className="rounded-full border border-[rgba(120,93,62,0.14)] bg-[rgba(255,248,236,0.04)] p-2.5 text-white transition hover:bg-[rgba(255,248,236,0.1)]"
               aria-label="Abrir menú"
             >
               {isOpen ? <X size={22} /> : <Menu size={22} />}
@@ -65,7 +65,7 @@ export default function Navbar() {
 
         {isOpen && (
           <div className="pb-5 md:hidden">
-            <div className="rounded-[1.6rem] border border-white/10 bg-[rgba(8,20,31,0.94)] p-3 backdrop-blur-xl">
+            <div className="rounded-[1.6rem] border border-[rgba(120,93,62,0.14)] bg-[rgba(8,20,31,0.94)] p-3 backdrop-blur-xl">
               <div className="flex flex-col space-y-2">
                 <MobileNavLink href="/" onClick={toggleMenu}>
                   Inicio
@@ -116,7 +116,7 @@ function NavLink({
       className={`rounded-full px-4 py-2.5 text-sm font-medium transition ${
         active
           ? "bg-[rgba(245,227,188,0.14)] text-[var(--color-sand)] shadow-sm"
-          : "text-white/72 hover:bg-white/[0.08] hover:text-white"
+          : "text-white/72 hover:bg-[rgba(255,248,236,0.08)] hover:text-white"
       }`}
     >
       {children}
@@ -136,7 +136,7 @@ function MobileNavLink({
   return (
     <Link
       href={href}
-      className="block rounded-2xl px-4 py-3 text-base font-medium text-white/78 transition hover:bg-white/[0.08] hover:text-white"
+      className="block rounded-2xl px-4 py-3 text-base font-medium text-white/78 transition hover:bg-[rgba(255,248,236,0.08)] hover:text-white"
       onClick={onClick}
     >
       {children}

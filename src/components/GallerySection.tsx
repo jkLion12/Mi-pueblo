@@ -44,7 +44,7 @@ export default function GallerySection() {
           {destinations.map((destination) => (
             <article
               key={destination.title}
-              className={`group hover-lift overflow-hidden rounded-[2rem] border border-white/10 bg-[rgba(255,255,255,0.02)] shadow-[0_24px_60px_rgba(0,0,0,0.22)] ${
+              className={`group hover-lift overflow-hidden rounded-[2rem] border border-[var(--color-line-soft)] bg-[rgba(255,255,255,0.02)] shadow-[0_24px_60px_rgba(0,0,0,0.22)] ${
                 destination.title === "Santuario Nacional de Ampay"
                   ? "lg:col-span-5"
                   : "lg:col-span-7"
@@ -59,7 +59,7 @@ export default function GallerySection() {
                   className="object-cover transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.16),_transparent_34%),linear-gradient(180deg,_transparent,_rgba(7,14,21,0.94))]" />
-                <div className="absolute right-5 top-5 rounded-full border border-white/20 bg-white/10 p-2 text-white backdrop-blur">
+                <div className="absolute right-5 top-5 rounded-full border border-[var(--color-line-soft)] bg-[var(--color-glass)] p-2 text-white backdrop-blur">
                   <Heart className="h-4 w-4" />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 text-white">
@@ -72,7 +72,7 @@ export default function GallerySection() {
                   <p className="mt-3 max-w-md text-sm leading-7 text-white/74">
                     {destination.description}
                   </p>
-                  <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/78 backdrop-blur">
+                  <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-line-soft)] bg-[var(--color-glass)] px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/78 backdrop-blur">
                     <MapPinned className="h-3.5 w-3.5 text-[var(--color-gold-soft)]" />
                     Abancay · Apurímac
                   </div>
@@ -142,7 +142,7 @@ export default function GallerySection() {
 
 function MiniStat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[1.35rem] border border-white/8 bg-white/[0.04] px-4 py-3">
+    <div className="rounded-[1.35rem] border border-[var(--color-line-soft)] bg-[var(--color-glass)] px-4 py-3">
       <p className="text-[0.68rem] uppercase tracking-[0.2em] text-white/45">{label}</p>
       <p className="mt-2 text-sm font-semibold text-white/88">{value}</p>
     </div>
@@ -151,7 +151,7 @@ function MiniStat({ label, value }: { label: string; value: string }) {
 
 function HighlightItem({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-[1.35rem] border border-white/8 bg-white/[0.04] px-4 py-4">
+    <div className="rounded-[1.35rem] border border-[var(--color-line-soft)] bg-[var(--color-glass)] px-4 py-4">
       <p className="text-sm font-semibold text-[var(--color-sand)]">{title}</p>
       <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">{text}</p>
     </div>

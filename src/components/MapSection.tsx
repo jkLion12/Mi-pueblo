@@ -32,9 +32,9 @@ export default function MapSection() {
             </a>
           </div>
 
-          <div className="border-t border-white/8 bg-[linear-gradient(180deg,_rgba(255,255,255,0.04),_rgba(255,255,255,0.02))] p-6 lg:border-l lg:border-t-0 lg:p-8">
+          <div className="border-t border-[var(--color-line-soft)] bg-[linear-gradient(180deg,_rgba(255,248,236,0.03),_rgba(255,255,255,0.02))] p-6 lg:border-l lg:border-t-0 lg:p-8">
             <div className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
-              <article className="relative min-h-[320px] overflow-hidden rounded-[2rem] border border-white/10">
+              <article className="relative min-h-[320px] overflow-hidden rounded-[2rem] border border-[var(--color-line-soft)]">
                 <Image
                   src="/images/abancay/rutas-abancay.png"
                   alt="Ruta paisajística inspirada en Abancay"
@@ -63,10 +63,10 @@ export default function MapSection() {
                 {planningItems.map(({ title, icon: Icon }) => (
                   <button
                     key={title}
-                    className="hover-lift flex w-full items-center justify-between rounded-[1.6rem] border border-white/8 bg-white/[0.04] px-4 py-4 text-left text-sm font-medium text-white/88"
+                    className="hover-lift flex w-full items-center justify-between rounded-[1.6rem] border border-[var(--color-line-soft)] bg-[var(--color-glass)] px-4 py-4 text-left text-sm font-medium text-white/88"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="rounded-2xl border border-white/8 bg-[rgba(255,255,255,0.06)] p-2 text-[var(--color-clay)]">
+                      <div className="rounded-2xl border border-[var(--color-line-soft)] bg-[rgba(255,248,236,0.06)] p-2 text-[var(--color-clay)]">
                         <Icon className="h-4 w-4" />
                       </div>
                       <span>{title}</span>
